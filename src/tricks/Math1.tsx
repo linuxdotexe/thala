@@ -1,8 +1,7 @@
-import LogicViewer from "@/components/LogicViewer";
 import 'katex/dist/katex.min.css';
 import Latex from 'react-latex-next';
 
-export default function Math1({ text }: {text: string}) {
+export default function Math1(text: string) {
     const elements = [
         // <Latex>{"$\\textit{accident   sdf}$"}</Latex>,
         <p><em>"{text}"</em> has <Latex>${text.length.toString()}$</Latex> characters.</p>,
@@ -12,5 +11,5 @@ export default function Math1({ text }: {text: string}) {
         <Latex>${(text.length*7).toString()}/{text.length.toString()} = 7$</Latex>,
         <h3>Thala for a reason!</h3>
     ]
-    return <LogicViewer elements={elements} text={text}/>
+    return elements;
 }
