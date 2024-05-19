@@ -1,20 +1,33 @@
 import { useEffect, useState } from "react";
 
-export default function LogicViewer({ elements, text }: { elements: Array<JSX.Element>, text: string }) {
+const textLoadTime = 1300;
+const scrollToThala = 300;
+
+export default function LogicViewer({ elements, text, trigger }: { elements: Array<JSX.Element>, text: string, trigger: boolean }) {
     const [visibleCount, setVisibleCount] = useState(0);
 
     useEffect(() => {
         if (visibleCount < elements.length) {
             const timer = setTimeout(() => {
                 setVisibleCount(visibleCount + 1);
-            }, 1300);
-            return () => clearTimeout(timer);
+            }, textLoadTime);
+            let timer2: NodeJS.Timeout;
+            if (visibleCount === elements.length - 1) {
+                const timer2 = setTimeout(() => {
+                    document.getElementById("thala-4-a-reason")?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                }, textLoadTime + scrollToThala);
+            }
+            return () => {
+                // console.log("cleanup internal");
+                clearTimeout(timer);
+                timer2 ? clearTimeout(timer2) : null; 
+            }
         }
-        return () => {
-            // cancel the subscription
-            setVisibleCount(0);
-        };
-    }, [visibleCount, elements.length, text]);
+    }, [visibleCount]);
+
+    useEffect(() => {
+        setVisibleCount(0);
+    }, [trigger]);
 
     return (
         <div className="flex flex-col items-center justify-center text-center text-2xl m-5">
