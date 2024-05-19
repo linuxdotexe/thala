@@ -1,3 +1,5 @@
+import generateKeys from "@/utils/generateKeys";
+
 // REDUDANT CODE. check src/components/Trick.tsx for validSubSeq(text: string) => boolean
 function getLetters(text: string) {
     const dhoni = "dhoni", DHONI = "DHONI";
@@ -23,11 +25,12 @@ function getLetters(text: string) {
 
 export default function SubSeq(text: string) {
     const letters = getLetters(text);
+    let k = 1;
     const elements = [
-        <p>Interesting, you entered: <em>"{text}"</em>.</p>,
-        <p>If I were to <em>randomly</em> pick a few letters from that, like:</p>,
-        <p>{letters}</p>,
-        <p><strong className="text-red-400">DHONI</strong>?</p>,
+        <p key={generateKeys("subseq", k++)}>Interesting, you entered: <em>&quot;{text}&quot;</em>.</p>,
+        <p key={generateKeys("subseq", k++)}>If I were to <em>randomly</em> pick a few letters from that, like:</p>,
+        <p key={generateKeys("subseq", k++)}>{letters}</p>,
+        <p key={generateKeys("subseq", k++)}><strong className="text-red-400">DHONI</strong>?</p>,
     ]
     return elements;
 }

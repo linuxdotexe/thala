@@ -23,7 +23,7 @@ export default function LogicViewer({ elements, text, trigger }: { elements: Arr
                 timer2 ? clearTimeout(timer2) : null; 
             }
         }
-    }, [visibleCount]);
+    }, [visibleCount, elements.length]);
 
     useEffect(() => {
         setVisibleCount(0);
