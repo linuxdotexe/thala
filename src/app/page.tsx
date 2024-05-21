@@ -5,7 +5,7 @@ export default function Home() {
     <main className="w-full flex flex-col flex-grow justify-center">
       <header className="text-center w-full bg-neutral-900 py-2">
         <h1 className="text-2xl text-amber-200 font-extrabold">
-          JUSTIFICATION FABRICATIONATOR
+          JUSTIFICATION <br /> FABRICATIONATOR
         </h1>
       </header>
       <ReasonBox />
