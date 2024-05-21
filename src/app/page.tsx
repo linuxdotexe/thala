@@ -2,14 +2,20 @@ import ReasonBox from "@/components/ReasonBox";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="w-full flex flex-col flex-grow justify-center">
+      <header className="text-center w-full bg-neutral-900 py-2">
+        <h1 className="text-2xl text-amber-200 font-extrabold">
+          JUSTIFICATION FABRICATIONATOR
+        </h1>
+      </header>
       <ReasonBox />
-      {/* <div className="overflow-hidden">
-        <div className="absolute top-20 left-80 w-80 h-3/4 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 rotate-45"></div>
-        <div className="absolute bottom-64 right-72 w-96 h-4/5 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 -rotate-12"></div>
-        <div className="absolute top-48 w-3/4 h-3/4 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 -rotate-12"></div>
-      </div> */}
+      <footer
+        className="font-medium bg-neutral-900 px-12 py-4 text-center
+      fixed bottom-0 text-sm w-full">
+        Made with <span className="text-amber-200">&#60;3</span> by Abhishek
+        Yelley and Sai Nivas Mangu
+      </footer>
     </main>
   );
 }
-4
+4;
