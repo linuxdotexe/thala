@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   --bg: #0a0a0a;
+  --text: #fafafa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +18,12 @@
     --background-end-rgb: 24, 29, 36;
 
     --bg: #0a0a0a;
+    --text: #fafafa;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--text);
   /* background: linear-gradient(
       to bottom,
       transparent,

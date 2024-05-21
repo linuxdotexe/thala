@@ -11,7 +11,7 @@ export default function Home() {
       <ReasonBox />
       <footer
         className="font-medium bg-neutral-900 px-12 py-4 text-center
-      fixed bottom-0 text-sm w-full">
+      fixed bottom-0 text-sm w-full text-neutral-50">
         Made with <span className="text-amber-200">&#60;3</span> by Abhishek
         Yelley and Sai Nivas Mangu
       </footer>
